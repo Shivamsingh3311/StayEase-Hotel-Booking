@@ -1,0 +1,146 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>StayEase | Hotel Booking</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header class="navbar">
+        <a href="#" class="logo">Stay<span>Ease.</span></a>
+        <nav>
+            <a href="#home">Home</a>
+            <a href="#hotels">Hotels</a>
+            <a href="#about">About</a>
+        </nav>
+        <a href="#hotels" class="nav-btn">Explore Hotels</a>
+    </header>
+
+    <section class="hero" id="home">
+        <div class="hero-content">
+            <p class="tagline">YOUR NEXT ADVENTURE STARTS HERE</p>
+            <h1>Find your perfect<br>place to <span>stay.</span></h1>
+            <p>Discover beautiful stays, unforgettable experiences,
+               and the best destinations for your next trip.</p>
+        </div>
+
+        <form class="search-box" id="searchForm">
+            <div class="field">
+                <label for="destination">Destination</label>
+                <input id="destination" type="text"
+                       placeholder="e.g. Goa, Delhi">
+            </div>
+            <div class="field">
+                <label for="checkin">Check-in</label>
+                <input id="checkin" type="date" required>
+            </div>
+            <div class="field">
+                <label for="checkout">Check-out</label>
+                <input id="checkout" type="date" required>
+            </div>
+            <div class="field">
+                <label for="guests">Guests</label>
+                <select id="guests">
+                    <option value="1">1 Guest</option>
+                    <option value="2" selected>2 Guests</option>
+                    <option value="3">3 Guests</option>
+                    <option value="4">4 Guests</option>
+                    <option value="5">5+ Guests</option>
+                </select>
+            </div>
+            <button type="submit" class="search-btn">Search Hotels</button>
+        </form>
+    </section>
+
+    <main>
+        <section class="hotels-section" id="hotels">
+            <div class="section-heading">
+                <div>
+                    <p class="tagline">HANDPICKED FOR YOU</p>
+                    <h2>Popular <span>stays</span></h2>
+                </div>
+                <p id="resultCount">Discover your next favourite stay.</p>
+            </div>
+
+            <div class="hotel-grid" id="hotelGrid">
+
+                <article class="hotel-card" data-city="goa">
+                    <img src="https://images.unsplash.com/photo-1571896349842-33c89424de2d?auto=format&fit=crop&w=900&q=80"
+                         alt="Luxury resort swimming pool">
+                    <div class="hotel-info">
+                        <div class="hotel-location">📍 Goa, India</div>
+                        <h3>Ocean Pearl Resort</h3>
+                        <p>A relaxing escape near the beach.</p>
+                        <div class="hotel-bottom">
+                            <div><strong>₹5,499</strong> <small>/ night</small></div>
+                            <span>★ 4.8</span>
+                        </div>
+                        <button class="book-btn" data-hotel="Ocean Pearl Resort"
+                                data-price="5499">Book Now</button>
+                    </div>
+                </article>
+
+                <article class="hotel-card" data-city="jaipur">
+                    <img src="https://images.unsplash.com/photo-1566073771259-6a8506099945?auto=format&fit=crop&w=900&q=80"
+                         alt="Elegant luxury hotel">
+                    <div class="hotel-info">
+                        <div class="hotel-location">📍 Jaipur, India</div>
+                        <h3>Royal Heritage Hotel</h3>
+                        <p>Experience royal comfort and culture.</p>
+                        <div class="hotel-bottom">
+                            <div><strong>₹4,299</strong> <small>/ night</small></div>
+                            <span>★ 4.7</span>
+                        </div>
+                        <button class="book-btn" data-hotel="Royal Heritage Hotel"
+                                data-price="4299">Book Now</button>
+                    </div>
+                </article>
+
+                <article class="hotel-card" data-city="manali">
+                    <img src="https://images.unsplash.com/photo-1518732714860-b62714ce0c59?auto=format&fit=crop&w=900&q=80"
+                         alt="Mountain retreat surrounded by nature">
+                    <div class="hotel-info">
+                        <div class="hotel-location">📍 Manali, India</div>
+                        <h3>Mountain View Retreat</h3>
+                        <p>Wake up to peaceful mountain views.</p>
+                        <div class="hotel-bottom">
+                            <div><strong>₹3,499</strong> <small>/ night</small></div>
+                            <span>★ 4.6</span>
+                        </div>
+                        <button class="book-btn" data-hotel="Mountain View Retreat"
+                                data-price="3499">Book Now</button>
+                    </div>
+                </article>
+
+            </div>
+            <p id="noResults" hidden>No matching hotels found. Try Goa, Jaipur, or Manali.</p>
+        </section>
+
+        <section class="about-section" id="about">
+            <p class="tagline">TRAVEL MORE. WORRY LESS.</p>
+            <h2>Your journey, made <span>simple.</span></h2>
+            <p>StayEase helps you explore stays for your next adventure.
+               Find a destination, compare options, and plan your trip.</p>
+        </section>
+    </main>
+
+    <footer>
+        <a href="#home" class="logo">Stay<span>Ease.</span></a>
+        <p>© 2026 StayEase. Demo project for learning web development.</p>
+    </footer>
+
+    <dialog id="bookingDialog">
+        <button id="closeDialog" class="close-btn" aria-label="Close">×</button>
+        <p class="tagline">YOUR TRIP STARTS HERE</p>
+        <h2>Booking summary</h2>
+        <div id="bookingSummary"></div>
+        <p class="notice">Demo only — no real reservation or payment is made.</p>
+        <button id="confirmBooking" class="search-btn">Confirm Demo Booking</button>
+    </dialog>
+
+    <script src="script.js"></script>
+</body>
+</html>
